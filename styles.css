@@ -47,8 +47,10 @@ footer {
 
 
 /* Agrega este estilo al final de tu archivo styles.css */
-.game img {
-    max-width: 50px; /* Establece el ancho máximo de la imagen */
-    height: auto; /* Mantiene la proporción de aspecto */
+#featured-games .game img {
+    max-width: 50px !important; /* Establece el ancho máximo de la imagen */
+    max-height: 50px !important; /* Establece la altura máxima de la imagen */
+    width: auto; /* Permitir que el ancho se ajuste automáticamente */
+    height: auto; /* Permitir que la altura se ajuste automáticamente */
 }
 
