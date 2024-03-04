@@ -1,16 +1,26 @@
-/* Agrega aquí cualquier estilo adicional que necesites */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    overflow: hidden; /* Evitar barras de desplazamiento */
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    z-index: -1; /* Colocar detrás de todo */
+    opacity: 0.7; /* Ajustar opacidad según necesites */
+}
+
+/* Estilo para el contenido principal */
+header, main, footer {
+    position: relative;
+    z-index: 1; /* Asegurarse de que el contenido esté delante de la imagen de fondo */
 }
 
 header h1 {
@@ -32,20 +42,13 @@ nav ul li a {
     text-decoration: none;
 }
 
-main {
-    padding: 20px;
-}
+
 
 section {
     margin-bottom: 40px;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-}
+
 
 /* Estilo para las imágenes de los juegos */
 #featured-games .game .game-info img {
