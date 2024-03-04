@@ -45,8 +45,7 @@ footer {
     text-align: center;
 }
 
-
-/* Agrega este estilo al final de tu archivo styles.css */
+/* Estilo para las imágenes de los juegos */
 #featured-games .game img {
     max-width: 70px !important; /* Establece el ancho máximo de la imagen */
     max-height: 70px !important; /* Establece la altura máxima de la imagen */
@@ -54,3 +53,41 @@ footer {
     height: auto; /* Permitir que la altura se ajuste automáticamente */
 }
 
+/* Estilo para el contenedor del juego */
+#game-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para el iframe del juego */
+#game-iframe {
+    width: 80%;
+    height: 80%;
+    border: none;
+    background-color: #fff; /* Fondo blanco */
+}
+
+/* Estilo para el mensaje de cierre del juego */
+#game-container p {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Estilo para el mensaje de cierre del juego en dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    #game-container p {
+        font-size: 12px;
+    }
+}
