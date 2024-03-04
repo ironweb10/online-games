@@ -39,10 +39,11 @@
     </footer>
 
     <div id="game-container">
-    <button id="fullscreen-button" onclick="toggleFullScreen()">Pantalla completa</button>
-    <iframe id="game-iframe" src="" frameborder="0" allowfullscreen></iframe>
-    <p>Presiona "Escape" para cerrar el juego</p>
-</div>
+        <iframe id="game-iframe" src="" frameborder="0" allowfullscreen></iframe>
+        <p>Presiona "Escape" para cerrar el juego</p>
+    </div>
+
+    <button onclick="toggleFullScreen()">Pantalla Completa</button>
 
     <script>
         function openGame(url) {
@@ -51,6 +52,17 @@
 
             gameIframe.src = url;
             gameContainer.style.display = "block";
+        }
+
+        function toggleFullScreen() {
+            var elem = document.getElementById("game-container");
+            if (!document.fullscreenElement) {
+                elem.requestFullscreen().catch(err => {
+                    console.log(`Error al intentar activar el modo de pantalla completa: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
         }
 
         document.addEventListener("keydown", function(event) {
@@ -65,5 +77,3 @@
     </script>
 </body>
 </html>
-
-
