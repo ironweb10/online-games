@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos en línea</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .game {
+            cursor: pointer;
+        }
+        #game-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 9999;
+            display: none;
+        }
+        #game-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,17 +41,37 @@
     <main>
         <section id="featured-games">
             <h2>Juegos destacados</h2>
-            <!-- Aquí puedes incrustar los juegos destacados -->
-            <iframe src="https://www.miniclip.com/games/8-ball-pool-multiplayer/es/" width="800" height="600" frameborder="0"></iframe>
-        </section>
-        <section id="all-games">
-            <h2>Todos los juegos</h2>
-            <!-- Aquí puedes listar todos los juegos disponibles -->
-            <iframe src="https://www.miniclip.com/games/8-ball-pool-multiplayer/es/" width="800" height="600" frameborder="0"></iframe>
+            <div class="game" onclick="openGame('1v1.lol')">
+                <img src="https://play-lh.googleusercontent.com/QYGRIDJbyVO7L7jH8CwiKJ4NumTGgcTVqU3ITooLWxro-eeNns1RZ0uwGGFe-r8M4co" alt="Icono del juego 1">
+                <p>Nombre del Juego 1</p>
+            </div>
+            <!-- Añade más juegos aquí -->
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Juegos en línea. Todos los derechos reservados.</p>
     </footer>
+
+    <div id="game-container">
+        <iframe id="game-iframe" src="" frameborder="0"></iframe>
+    </div>
+
+    <script>
+        function openGame(url) {
+            var gameContainer = document.getElementById("game-container");
+            var gameIframe = document.getElementById("game-iframe");
+
+            gameIframe.src = url;
+            gameContainer.style.display = "block";
+        }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                document.getElementById("game-container").style.display = "none";
+                document.getElementById("game-iframe").src = "";
+            }
+        });
+    </script>
 </body>
 </html>
+
